@@ -157,4 +157,11 @@ public class Item extends android.support.v7.widget.AppCompatTextView {
         setTextSize(TypedValue.COMPLEX_UNIT_PX,size/3);
     }
 
+    /**
+     * 获取数字
+     * @return
+     */
+    public int getNum(){
+        return mNum;
+    }
 }
