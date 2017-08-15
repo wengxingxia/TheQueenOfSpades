@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
 /**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
+ * 欢迎页
  */
 public class WelcomeActivity extends AppCompatActivity {
 
