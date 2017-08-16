@@ -1,4 +1,4 @@
-package com.example.wxx.thequeenofspades;
+package com.example.wxx.thequeenofspades.activity;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import com.example.wxx.thequeenofspades.Item;
+import com.example.wxx.thequeenofspades.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
     @BindView(R.id.tvCurrentMax)
     TextView mTvCurrentMax;

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="com.example.wxx.thequeenofspades.MainActivity">
+    tools:context="com.example.wxx.thequeenofspades.activity.GameActivity">
 
 
     <TextView

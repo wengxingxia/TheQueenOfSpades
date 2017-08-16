@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.wxx.thequeenofspades.WelcomeActivity">
+    tools:context="com.example.wxx.thequeenofspades.activity.WelcomeActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -12,28 +12,27 @@
         android:src="@mipmap/hyy"
         />
 
-    <TextView
-        android:id="@+id/tvDesc"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="this is for you"
-        android:textColor="@android:color/holo_green_light"
-        android:textSize="19sp"
-        android:typeface="serif"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/tvDesc"
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/ivRoll"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@mipmap/roll"
             />
-    </LinearLayout>
+
+        <com.hanks.htextview.fall.FallTextView
+            android:id="@+id/tvFallText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="this is for you"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="19sp"
+            android:typeface="serif"/>
+    </RelativeLayout>
 </RelativeLayout>

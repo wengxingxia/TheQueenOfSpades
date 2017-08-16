@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.example.wxx.thequeenofspades"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -32,6 +32,22 @@ dependencies {
     //    glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'jp.wasabeef:glide-transformations:2.0.2'
+//    文字动画
+    String htextview_version = "0.1.1"
+    compile "com.hanks:htextview-base:$htextview_version"    // base library
+
+    compile "com.hanks:htextview-fade:$htextview_version"        // optional
+    compile "com.hanks:htextview-line:$htextview_version"        // optional
+    compile "com.hanks:htextview-rainbow:$htextview_version"     // optional
+    compile "com.hanks:htextview-typer:$htextview_version"       // optional
+
+    compile "com.hanks:htextview-scale:$htextview_version"       // optional
+    compile "com.hanks:htextview-evaporate:$htextview_version"   // optional
+    compile "com.hanks:htextview-fall:$htextview_version"        // optional
+
+//    折叠框
+    compile 'com.github.chaychan:PowerfulViewLibrary:1.2.1'
+
     compile 'com.android.support:support-v4:26.+'
     testCompile 'junit:junit:4.12'
 }
