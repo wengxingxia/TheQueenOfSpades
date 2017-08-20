@@ -34,6 +34,8 @@ public class Item extends android.support.v7.widget.AppCompatTextView {
         mLP = new GridLayout.LayoutParams();
         setGravity(Gravity.CENTER);//文字居中显示
         setLayoutParams(mLP);//设置属性
+        setGravity(Gravity.RIGHT|Gravity.BOTTOM);
+        setTextColor(UIUtils.getColor(R.color.color_red_text));
     }
 
     /**
@@ -48,49 +50,49 @@ public class Item extends android.support.v7.widget.AppCompatTextView {
                 mBackgroundColor = R.color.bg_0;
                 break;
             case 2:
-                mBackgroundColor = R.color.bg_2;
+                mBackgroundColor = R.mipmap.item_2;
                 break;
             case 4:
-                mBackgroundColor = R.color.bg_4;
+                mBackgroundColor = R.mipmap.item_4;
                 break;
             case 8:
-                mBackgroundColor = R.color.bg_8;
+                mBackgroundColor = R.mipmap.item_8;
                 break;
             case 16:
-                mBackgroundColor = R.color.bg_16;
+                mBackgroundColor = R.mipmap.item_16;
                 break;
             case 32:
-                mBackgroundColor = R.color.bg_32;
+                mBackgroundColor = R.mipmap.item_32;
                 break;
             case 64:
-                mBackgroundColor = R.color.bg_64;
+                mBackgroundColor = R.mipmap.item_64;
                 break;
             case 128:
-                mBackgroundColor = R.color.bg_128;
+                mBackgroundColor = R.mipmap.item_128;
                 break;
             case 256:
-                mBackgroundColor = R.color.bg_256;
+                mBackgroundColor = R.mipmap.item_256;
                 break;
             case 512:
-                mBackgroundColor = R.color.bg_512;
+                mBackgroundColor = R.mipmap.item_512;
                 break;
             case 1024:
-                mBackgroundColor = R.color.bg_1024;
+                mBackgroundColor = R.mipmap.item_1024;
                 break;
             case 2048:
-                mBackgroundColor = R.color.bg_2048;
+                mBackgroundColor = R.mipmap.item_2048;
                 break;
             case 4096:
-                mBackgroundColor = R.color.bg_4096;
+                mBackgroundColor = R.mipmap.item_4096;
                 break;
             case 8192:
-                mBackgroundColor = R.color.bg_8192;
+                mBackgroundColor = R.mipmap.item_8192;
                 break;
             case 16384:
-                mBackgroundColor = R.color.bg_16384;
+                mBackgroundColor = R.mipmap.item_16384;
                 break;
             default:
-                mBackgroundColor = R.color.bg_default;
+                mBackgroundColor = R.mipmap.item_default;
                 break;
         }
         if (mNum != 0) {

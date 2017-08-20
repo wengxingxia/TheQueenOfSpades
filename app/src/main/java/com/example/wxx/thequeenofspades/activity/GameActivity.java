@@ -3,6 +3,7 @@ package com.example.wxx.thequeenofspades.activity;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -59,6 +60,16 @@ public class GameActivity extends AppCompatActivity {
 
     private Animation mAnimationScale;//动画
 
+    private MediaPlayer mMediaPlayerMerge;
+    private MediaPlayer mMediaPlayerMove;
+    private MediaPlayer mMediaPlayerGameOver;
+
+    private boolean isCloseSounds;//true表示关闭音乐
+
+    private boolean isMerge;//true表示发生合并
+
+    private int mSoundsId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +86,7 @@ public class GameActivity extends AppCompatActivity {
         mDivider = getResources().getDimensionPixelSize(R.dimen.divider);//分割线宽度
         mMargin = getResources().getDimensionPixelOffset(R.dimen.margin);//边距
         mAnimationScale = AnimationUtils.loadAnimation(this, R.anim.anim_scale_add_num);
+
     }
 
     //    初始化游戏面板
@@ -161,10 +173,16 @@ public class GameActivity extends AppCompatActivity {
                         if (move(moveOrientation)) {
                             addNum(1);
                             mTvCurrentMax.setText(String.format("当前最高：%d", mMaxScore));
+                            if (isMerge) {
+                                mSoundsId = R.raw.merge;
+                            } else
+                                mSoundsId = R.raw.move;
                         } else {
 //                            游戏结束
                             gameOver();
+                            mSoundsId = R.raw.gameover;
                         }
+                        play();
                     }
                 }
                 break;
@@ -284,6 +302,7 @@ public class GameActivity extends AppCompatActivity {
      * @return
      */
     private boolean move(char moveOrientation) {
+        isMerge = false;
         switch (moveOrientation) {
             case 'l':
                 return moveToLeft();
@@ -313,6 +332,7 @@ public class GameActivity extends AppCompatActivity {
                         mLastNum = num;
                     } else {
                         if (mLastNum == num) {
+                            isMerge = true;
                             f = true;
                             mNums.add(num * 2);
                             mLastNum = -1;
@@ -360,6 +380,7 @@ public class GameActivity extends AppCompatActivity {
                         mLastNum = num;
                     } else {
                         if (mLastNum == num) {
+                            isMerge = true;
                             f = true;
                             mNums.add(num * 2);
                             mLastNum = -1;
@@ -406,6 +427,7 @@ public class GameActivity extends AppCompatActivity {
                         mLastNum = num;
                     } else {
                         if (mLastNum == num) {
+                            isMerge = true;
                             f = true;
                             mNums.add(num * 2);
                             mLastNum = -1;
@@ -453,6 +475,7 @@ public class GameActivity extends AppCompatActivity {
                         mLastNum = num;
                     } else {
                         if (mLastNum == num) {
+                            isMerge = true;
                             f = true;
                             mNums.add(num * 2);
                             mLastNum = -1;
@@ -541,5 +564,55 @@ public class GameActivity extends AppCompatActivity {
                 selectColumn();//选择列数
                 break;
         }
+    }
+
+
+    /**
+     * 播放音乐
+     */
+    private void play() {
+        try {
+            if (isCloseSounds)
+                return;
+            switch (mSoundsId) {
+                case R.raw.merge:
+                    if(mMediaPlayerMerge==null){
+                        mMediaPlayerMerge = MediaPlayer.create(this, mSoundsId);
+                    }
+                    mMediaPlayerMerge.start();
+                    break;
+                case R.raw.move:
+                    if(mMediaPlayerMove==null){
+                        mMediaPlayerMove = MediaPlayer.create(this, mSoundsId);
+                    }
+                    mMediaPlayerMove.start();
+                    break;
+                case R.raw.gameover:
+                    if(mMediaPlayerGameOver==null){
+                        mMediaPlayerGameOver = MediaPlayer.create(this, mSoundsId);
+                    }
+                    mMediaPlayerGameOver.start();
+                    break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mMediaPlayerMerge != null) {
+            mMediaPlayerMerge.release();
+            mMediaPlayerMerge = null;
+        }
+        if (mMediaPlayerMove != null) {
+            mMediaPlayerMove.release();
+            mMediaPlayerMove = null;
+        }
+        if (mMediaPlayerGameOver != null) {
+            mMediaPlayerGameOver.release();
+            mMediaPlayerGameOver = null;
+        }
+        super.onDestroy();
     }
 }
