@@ -4,9 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="color_blue_text">#0f88eb</color>
-    <color name="color_red_text">#fe3432</color>
-
     <color name="bg_0">#fff</color>
     <color name="bg_2">#fff7bc</color>
     <color name="bg_4">#fff836</color>
@@ -25,5 +22,22 @@
     <color name="bg_default">#a90006</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <!--灰色-->
+    <color name="color_gray">#cccccc</color>
+    <color name="color_gray_light">#eeeeee</color>
+    <color name="color_blue_light">#0f88eb</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_blue_dark">#1db1db</color>
+    <color name="color_black_text">#333333</color>
+    <color name="color_blue_text">#0f88eb</color>
+    <color name="color_gray_text">#999999</color>
+    <color name="color_gray_dark_text">#666666</color>
+    <color name="color_red_text">#fe3432</color>
+    <color name="color_text_hint">#cccccc</color>
+    <color name="color_divider">#a8a8ab</color>
+    <color name="banner_bottom_bar_bg_day">#65000000</color>
+
+    <color name="color_bg_gray">#f0f1f5</color>
 
 </resources>
