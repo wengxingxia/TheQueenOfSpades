@@ -21,14 +21,34 @@
         android:orientation="vertical"
         android:paddingRight="14dp">
 
-        <TextView
+        <com.hanks.htextview.scale.ScaleTextView
+            android:id="@+id/scaleTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="从前有个"
+            android:textSize="18sp"
+            android:gravity="right"
+            android:textColor="@color/color_black_text"
             />
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="7dp"
             android:layout_height="wrap_content">
+
+            <com.hanks.htextview.scale.ScaleTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="告诉我你的答案："
+                android:textSize="18sp"
+                android:gravity="right"
+                android:textColor="@color/color_green_text"/>
+            <EditText
+                android:id="@+id/etAnswer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLength="10"
+                android:maxLines="1"/>
+
 
         </LinearLayout>
     </LinearLayout>

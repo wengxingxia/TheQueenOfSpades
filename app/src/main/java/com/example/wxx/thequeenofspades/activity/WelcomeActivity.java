@@ -82,7 +82,7 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
-                Intent intent = new Intent(WelcomeActivity.this,GameActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this,QuestionActivity.class);
                 startActivity(intent);
                 finish();
             }
