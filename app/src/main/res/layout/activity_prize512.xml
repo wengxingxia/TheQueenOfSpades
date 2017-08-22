@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.wxx.thequeenofspades.activity.Prize1Activity">
+    tools:context="com.example.wxx.thequeenofspades.activity.Prize512Activity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@mipmap/welcome"/>
+        android:src="@mipmap/prize_512"/>
 
     <TextView
         android:id="@+id/tvShow"

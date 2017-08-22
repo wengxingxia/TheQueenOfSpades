@@ -3,6 +3,7 @@ package com.example.wxx.thequeenofspades.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.chaychan.viewlib.expandabletextview.ExpandableTextView;
@@ -12,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Prize1Activity extends AppCompatActivity {
+public class Prize128Activity extends AppCompatActivity {
 
     @BindView(R.id.tv)
     ExpandableTextView mTv;
@@ -22,7 +23,10 @@ public class Prize1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prize1);
+        //取消状态栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_prize128);
         ButterKnife.bind(this);
 
         mTv.setText("古今成功之士，大凡都有宽阔的胸襟。一代名臣左宗棠，自小擅长棋艺，" +

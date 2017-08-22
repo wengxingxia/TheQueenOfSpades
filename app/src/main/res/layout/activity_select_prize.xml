@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.wxx.thequeenofspades.activity.SelectPrizeActivity">
+
+    <TextView
+        android:id="@+id/tv64"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="64分奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv128"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="128分奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv256"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="256分奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv512"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="512分奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv1024"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="1024分奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv2048"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="2048分奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv4096"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="4096分奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv8192"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="8192分奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv16384"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_green"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="16384分以上奖品"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"/>
+
+</LinearLayout>

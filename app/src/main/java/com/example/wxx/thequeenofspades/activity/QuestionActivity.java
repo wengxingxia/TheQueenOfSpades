@@ -65,15 +65,15 @@ public class QuestionActivity extends AppCompatActivity {
         mSubscribe = Observable.interval(0, 1, TimeUnit.MILLISECONDS).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
             @Override
             public void accept(@NonNull Long aLong) throws Exception {
-                if (aLong > 3000) {
+                if (aLong > 2000) {
                     if (!mSubscribe.isDisposed()) {
                         mSubscribe.dispose();
                     }
                 } else {
-                    mScaleTv1.setProgress(aLong / 3000f);
-                    mScaleTv2.setProgress(aLong / 3000f);
-                    mScaleTv3.setProgress(aLong / 3000f);
-                    mScaleTv4.setProgress(aLong / 3000f);
+                    mScaleTv1.setProgress(aLong / 2000f);
+                    mScaleTv2.setProgress(aLong / 2000f);
+                    mScaleTv3.setProgress(aLong / 2000f);
+                    mScaleTv4.setProgress(aLong / 2000f);
                 }
             }
         });

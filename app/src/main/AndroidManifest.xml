@@ -26,17 +26,18 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Prize1Activity">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-            -->
-        </activity>
+        <activity android:name=".activity.Prize64Activity"/>
+        <activity android:name=".activity.Prize128Activity"/>
+        <activity android:name=".activity.Prize256Activity"/>
+        <activity android:name=".activity.Prize512Activity"/>
+        <activity android:name=".activity.Prize1024Activity"/>
+        <activity android:name=".activity.Prize2048Activity"/>
+        <activity android:name=".activity.Prize4096Activity"/>
+        <activity android:name=".activity.Prize8192Activity"/>
+        <activity android:name=".activity.Prize16384Activity"/>
         <activity android:name=".activity.QuestionActivity">
+        </activity>
+        <activity android:name=".activity.SelectPrizeActivity">
         </activity>
     </application>
 

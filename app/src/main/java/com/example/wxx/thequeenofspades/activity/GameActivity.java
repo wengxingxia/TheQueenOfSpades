@@ -1,6 +1,7 @@
 package com.example.wxx.thequeenofspades.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.media.MediaPlayer;
@@ -85,6 +86,9 @@ public class GameActivity extends AppCompatActivity {
     private int mSoundsId;
     private long mExitTime;//双击退出程序
     private AlertDialog mRuleDialog;
+    private AlertDialog mGameOverDialog;
+
+    private Class mPrizeClazz;//奖项Class
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +97,21 @@ public class GameActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         init();
         initGame();
+        setListener();//设置监听器
+    }
+
+    /**
+     * 设置监听器
+     */
+    private void setListener() {
+        mTv.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Intent intent = new Intent(GameActivity.this,SelectPrizeActivity.class);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 
     //    初始化宽度等数据
@@ -211,22 +230,54 @@ public class GameActivity extends AppCompatActivity {
      */
     private void gameOver() {
         String msg = "";
-        if (mMaxScore < 254) {
+        int iconId = 0;
+        if (mMaxScore <= 16) {
+            iconId = R.mipmap.dialog_16;
+            msg = "真是弱到没眼看呐！";
+            mPrizeClazz = null;
+        } else if (mMaxScore <= 32) {
+            iconId = R.mipmap.dialog_32;
             msg = "你真的弱爆了！";
-        } else if (mMaxScore < 512) {
+            mPrizeClazz = null;
+        } else if (mMaxScore <= 64) {
+            iconId = R.mipmap.dialog_64;
+            mPrizeClazz = Prize64Activity.class;
             msg = "太弱了！";
-        } else if (mMaxScore < 1024) {
+        } else if (mMaxScore <= 128) {
+            iconId = R.mipmap.dialog_128;
             msg = "还凑合，继续加油吧";
-        } else if (mMaxScore < 2048) {
+            mPrizeClazz = Prize128Activity.class;
+        } else if (mMaxScore <= 256) {
+            iconId = R.mipmap.dialog_256;
             msg = "不错嘛，可以小炫耀下，不过小心被鄙视！";
-        } else if (mMaxScore < 4096) {
+            mPrizeClazz = Prize256Activity.class;
+        } else if (mMaxScore <= 512) {
+            iconId = R.mipmap.dialog_512;
             msg = "好崇拜啊！";
-        } else if (mMaxScore < 8192) {
+            mPrizeClazz = Prize512Activity.class;
+        } else if (mMaxScore <= 1024) {
+            iconId = R.mipmap.dialog_1024;
             msg = "你是我的偶像！";
-        } else {
+            mPrizeClazz = Prize1024Activity.class;
+        } else if (mMaxScore <= 2048) {
+            iconId = R.mipmap.dialog_2048;
             msg = "你已超神！";
+            mPrizeClazz = Prize2048Activity.class;
+        } else if (mMaxScore <= 4096) {
+            iconId = R.mipmap.dialog_4096;
+            msg = "你已势不可挡了！";
+            mPrizeClazz = Prize4096Activity.class;
+        } else if (mMaxScore <= 8192) {
+            iconId = R.mipmap.dialog_8192;
+            msg = "你已势不可挡了！";
+            mPrizeClazz = Prize8192Activity.class;
+        } else {
+            iconId = R.mipmap.dialog_16384;
+            msg = "你已势不可挡了！";
+            mPrizeClazz = Prize16384Activity.class;
         }
-//        new AlertDialog.Builder(this).setMessage(msg).setPositiveButton("从新开始", mOnClickListener)
+        showGameOverDialog(iconId, msg);
+//        new android.support.v7.app.AlertDialog.Builder(this).setMessage(msg).setPositiveButton("从新开始", mOnClickListener)
 //                .setNegativeButton("退出", mOnClickListener).show().setCancelable(false);
         saveScore();//保存分数
     }
@@ -533,7 +584,8 @@ public class GameActivity extends AppCompatActivity {
             SharedPreferences.Editor e = getSharedPreferences("level", MODE_PRIVATE).edit();
             e.putInt(mLevel, mMaxScore);
             e.commit();
-        };
+        }
+        ;
         mMaxScore = 0;
     }
 
@@ -677,4 +729,48 @@ public class GameActivity extends AppCompatActivity {
         mRuleDialog.show();
     }
 
+    /***
+     * 显示游戏结束对话框
+     * @param iconId
+     * @param msg
+     */
+    private void showGameOverDialog(int iconId, String msg) {
+        if (mGameOverDialog == null) {
+            mGameOverDialog = new AlertDialog.Builder(this).setContentView(R.layout.dialog_gameover).addDefaultAnimation().setCancelable(false).create();
+            mGameOverDialog.setOnClickListener(R.id.tvOut, mOnClickListenerGameOver);
+            mGameOverDialog.setOnClickListener(R.id.tvRestart, mOnClickListenerGameOver);
+            mGameOverDialog.setOnClickListener(R.id.tvGetPrize, mOnClickListenerGameOver);
+        }
+        ImageView ivIcon = mGameOverDialog.getView(R.id.ivIcon);
+        Glide.with(this).load(iconId).centerCrop().into(ivIcon);
+        mGameOverDialog.setText(R.id.tvMsg, msg);
+        mGameOverDialog.show();
+    }
+
+    private View.OnClickListener mOnClickListenerGameOver = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.tvOut:
+                    mGameOverDialog.dismiss();
+                    saveScore();
+                    finish();
+                    break;
+                case R.id.tvRestart:
+                    mGameOverDialog.dismiss();
+                    restart();//重新开始
+                    break;
+                case R.id.tvGetPrize:
+                    if (mPrizeClazz != null) {
+                        mGameOverDialog.dismiss();
+                        restart();
+                        Intent intent = new Intent(GameActivity.this, mPrizeClazz);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(GameActivity.this, "傻猪，得分太低，没有奖励哦", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+            }
+        }
+    };
 }
