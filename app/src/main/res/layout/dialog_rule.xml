@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="294dp"
+              android:layout_height="wrap_content"
+              android:background="@drawable/rectangle_corner_white"
+              android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="26dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp"
+        android:paddingTop="26dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="游戏规则"
+            android:textColor="@color/color_black_text"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tvTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="left"
+            android:text="\n    每次通过手势在屏幕上滑动，控制所有方块向同一个方向运动。
+            \n\n    每次操作之后会在空白的方格处随机生成一个2或者4，两个相同数字的方块撞在一起之后合并成为他们的和，屏幕上最大分数的块，代表你本次游戏的分数。
+            \n\n    当游戏结束时，游戏分数超过64分（包括64分），就有得到相应的奖励，不同的分数会有不同的奖励哦。
+            \n\n    如果所有格子全部填满并且相邻的格子都不相同也就是无法移动的话，那么恭喜你，gameover。"
+            android:textColor="@color/color_black_text"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_gray"/>
+
+
+    <TextView
+        android:id="@+id/tvOk"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:text="OK"
+        android:textColor="@color/color_green_text"
+        android:textSize="16sp"/>
+
+</LinearLayout>

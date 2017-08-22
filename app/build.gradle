@@ -48,6 +48,12 @@ dependencies {
 //    折叠框
     compile 'com.github.chaychan:PowerfulViewLibrary:1.2.1'
 
+    //    rxjava相关
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.1@aar'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+
     compile 'com.android.support:support-v4:26.+'
     testCompile 'junit:junit:4.12'
 }

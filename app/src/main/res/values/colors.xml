@@ -33,6 +33,8 @@
     <color name="color_black_text">#333333</color>
     <color name="color_blue_text">#0f88eb</color>
     <color name="color_green_text">#78ae2f</color>
+    <color name="color_green_text_light">#92ca44</color>
+    <color name="color_green_text_dark">#619b13</color>
     <color name="color_gray_text">#999999</color>
     <color name="color_gray_dark_text">#666666</color>
     <color name="color_red_text">#fe3432</color>

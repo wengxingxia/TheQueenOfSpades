@@ -5,18 +5,24 @@ import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.wxx.thequeenofspades.AlawysTextView;
 import com.example.wxx.thequeenofspades.Item;
 import com.example.wxx.thequeenofspades.R;
+import com.example.wxx.thequeenofspades.dialog.AlertDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +43,14 @@ public class GameActivity extends AppCompatActivity {
     Button mBtnSelectColumn;
     @BindView(R.id.glBroad)
     GridLayout mGlBroad;
+    @BindView(R.id.tv)
+    AlawysTextView mTv;
+    @BindView(R.id.llBtn)
+    LinearLayout mLlBtn;
+    @BindView(R.id.ivSound)
+    ImageView mIvSound;
+    @BindView(R.id.tvRule)
+    TextView mTvRule;
     private int mColumnCount = 4;
     private Item[][] mItems;
     private int mItemWidth;
@@ -69,6 +83,8 @@ public class GameActivity extends AppCompatActivity {
     private boolean isMerge;//true表示发生合并
 
     private int mSoundsId;
+    private long mExitTime;//双击退出程序
+    private AlertDialog mRuleDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,8 +226,8 @@ public class GameActivity extends AppCompatActivity {
         } else {
             msg = "你已超神！";
         }
-        new AlertDialog.Builder(this).setMessage(msg).setPositiveButton("从新开始", mOnClickListener)
-                .setNegativeButton("退出", mOnClickListener).show().setCancelable(false);
+//        new AlertDialog.Builder(this).setMessage(msg).setPositiveButton("从新开始", mOnClickListener)
+//                .setNegativeButton("退出", mOnClickListener).show().setCancelable(false);
         saveScore();//保存分数
     }
 
@@ -517,7 +533,7 @@ public class GameActivity extends AppCompatActivity {
             SharedPreferences.Editor e = getSharedPreferences("level", MODE_PRIVATE).edit();
             e.putInt(mLevel, mMaxScore);
             e.commit();
-        }
+        };
         mMaxScore = 0;
     }
 
@@ -550,11 +566,11 @@ public class GameActivity extends AppCompatActivity {
      * 选择列数
      */
     private void selectColumn() {
-        new AlertDialog.Builder(this).setItems(new String[]{"4x4", "5x5", "6x6"}, mOnClickListener).show().setCancelable(false);
+        new android.support.v7.app.AlertDialog.Builder(this).setItems(new String[]{"4x4", "5x5", "6x6"}, mOnClickListener).show().setCancelable(false);
         saveScore();//保存分数
     }
 
-    @OnClick({R.id.btnRestart, R.id.btnSelectColumn})
+    @OnClick({R.id.btnRestart, R.id.btnSelectColumn, R.id.ivSound, R.id.tvRule})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btnRestart:
@@ -562,6 +578,18 @@ public class GameActivity extends AppCompatActivity {
                 break;
             case R.id.btnSelectColumn:
                 selectColumn();//选择列数
+                break;
+            case R.id.ivSound:
+                if (isCloseSounds) {
+                    isCloseSounds = false;
+                    Glide.with(this).load(R.mipmap.sound_on).centerCrop().into(mIvSound);
+                } else {
+                    isCloseSounds = true;
+                    Glide.with(this).load(R.mipmap.sound_off).centerCrop().into(mIvSound);
+                }
+                break;
+            case R.id.tvRule:
+                showRuleDialog();
                 break;
         }
     }
@@ -576,19 +604,19 @@ public class GameActivity extends AppCompatActivity {
                 return;
             switch (mSoundsId) {
                 case R.raw.merge:
-                    if(mMediaPlayerMerge==null){
+                    if (mMediaPlayerMerge == null) {
                         mMediaPlayerMerge = MediaPlayer.create(this, mSoundsId);
                     }
                     mMediaPlayerMerge.start();
                     break;
                 case R.raw.move:
-                    if(mMediaPlayerMove==null){
+                    if (mMediaPlayerMove == null) {
                         mMediaPlayerMove = MediaPlayer.create(this, mSoundsId);
                     }
                     mMediaPlayerMove.start();
                     break;
                 case R.raw.gameover:
-                    if(mMediaPlayerGameOver==null){
+                    if (mMediaPlayerGameOver == null) {
                         mMediaPlayerGameOver = MediaPlayer.create(this, mSoundsId);
                     }
                     mMediaPlayerGameOver.start();
@@ -615,4 +643,38 @@ public class GameActivity extends AppCompatActivity {
         }
         super.onDestroy();
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+
+                Toast.makeText(getApplicationContext(), "再按一次返回键退出程序",
+                        Toast.LENGTH_SHORT).show();
+                mExitTime = System.currentTimeMillis();
+            } else {
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    /**
+     * 显示回答对话框
+     */
+    private void showRuleDialog() {
+        if (mRuleDialog == null) {
+            mRuleDialog = new AlertDialog.Builder(this).setContentView(R.layout.dialog_rule).addDefaultAnimation().create();
+            mRuleDialog.setOnClickListener(R.id.tvOk, new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mRuleDialog.dismiss();
+                }
+            });
+        }
+        mRuleDialog.show();
+    }
+
 }

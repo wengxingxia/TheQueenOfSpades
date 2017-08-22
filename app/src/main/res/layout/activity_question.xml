@@ -17,39 +17,90 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
-        android:paddingLeft="14dp"
         android:orientation="vertical"
+        android:paddingLeft="14dp"
         android:paddingRight="14dp">
 
         <com.hanks.htextview.scale.ScaleTextView
-            android:id="@+id/scaleTv"
+            android:id="@+id/scaleTv1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textColor="@color/color_green_text"
             android:gravity="right"
-            android:textColor="@color/color_black_text"
+            android:text="从前有两个人"
+            android:textSize="18sp"
             />
+
+        <com.hanks.htextview.scale.ScaleTextView
+            android:id="@+id/scaleTv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/color_green_text"
+            android:gravity="right"
+            android:text="一个叫我爱你  一个叫我不爱你"
+            android:textSize="18sp"
+            />
+
+        <com.hanks.htextview.scale.ScaleTextView
+            android:id="@+id/scaleTv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="right"
+            android:text="一天  我不爱你死了"
+            android:textColor="@color/color_green_text"
+            android:textSize="18sp"
+            />
+
+        <com.hanks.htextview.scale.ScaleTextView
+            android:id="@+id/scaleTv4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="right"
+            android:text="还剩下谁"
+            android:textColor="@color/color_green_text"
+            android:textSize="18sp"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="7dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp">
 
-            <com.hanks.htextview.scale.ScaleTextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="告诉我你的答案："
-                android:textSize="18sp"
                 android:gravity="right"
-                android:textColor="@color/color_green_text"/>
+                android:text="告诉我你的答案："
+                android:textColor="@color/color_green_text"
+                android:textSize="18sp"/>
+
             <EditText
                 android:id="@+id/etAnswer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/bg_128"
+                android:paddingLeft="5dp"
                 android:maxLength="10"
                 android:maxLines="1"/>
 
-
+            <TextView
+                android:id="@+id/tvOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_gravity="center_vertical"
+                android:text="确定"
+                android:background="@drawable/selector_btn_green"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/color_white"
+                android:textSize="18sp"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

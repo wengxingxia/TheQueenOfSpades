@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
     tools:context="com.example.wxx.thequeenofspades.activity.GameActivity">
 
@@ -12,16 +12,16 @@
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:ellipsize="marquee"
         android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
         android:paddingBottom="10dp"
         android:singleLine="true"
-        android:focusableInTouchMode="true"
-        android:layout_gravity="center"
-        app:colorSpeed="1dp"
+        android:text="一颗无时无刻想和你一起的心在燃烧着，想牵着你的手，一起慢慢变老，不管海枯石烂，地老天荒"
         android:textSize="20sp"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:text="一颗无时无刻想和你一起的心在燃烧着，想牵着你的手，一起慢慢变老，不管海枯石烂，地老天荒"/>
+        app:colorSpeed="1dp"/>
 
     <TextView
         android:id="@+id/tvCurrentMax"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="7dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_btn_bg"
+            android:background="@drawable/selector_btn_green"
             android:text="重新开始"
             android:textColor="@android:color/white"/>
 
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_btn_bg"
+            android:background="@drawable/selector_btn_green"
             android:text="选择列数"
             android:textColor="@android:color/white"/>
 
@@ -79,18 +79,34 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/shape_game_broad_bg"
         />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/glBroad"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:layout_marginTop="15dp"
+        android:gravity="right">
+
+        <ImageView
+            android:id="@+id/ivSound"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/sound_on"/>
 
         <TextView
+            android:id="@+id/tvRule"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/selector_btn_green"
+            android:gravity="right"
+            android:paddingBottom="8dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingTop="8dp"
+            android:text="游戏规则"
+            android:textColor="@color/color_white"
+            android:textSize="18sp"/>
     </LinearLayout>
 </RelativeLayout>

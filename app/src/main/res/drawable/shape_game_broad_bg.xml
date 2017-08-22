@@ -3,7 +3,8 @@
 
     <stroke
         android:width="@dimen/divider"
-        android:color="#2b7fff"/>
+        android:color="@color/color_green_text"/>
 
-    <solid android:color="#aaaaaa"/>
+    <solid android:color="#c7eac4"
+        />
 </shape>
