@@ -20,25 +20,31 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="50dp"
-        android:text="小笑话"/>
+        android:background="@drawable/selector_btn_green"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:text="臭蛋独白"
+        android:textColor="@color/color_white"/>
 
     <com.chaychan.viewlib.expandabletextview.ExpandableTextView
         android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:ellipsize="end"
         android:textColor="#666"
+        android:visibility="gone"
         app:animDuration="200"
-        android:layout_alignParentBottom="true"
         app:collapseDrawable="@mipmap/icon_orange_arrow_down"
         app:collapseExpandGrarity="right"
         app:collapseExpandTextColor="@color/main_color"
-        app:contentTextSize="15sp"
+        app:contentTextSize="18sp"
         app:expandDrawable="@mipmap/icon_orange_arrow_up"
-        app:maxCollapsedLines="4"
+        app:maxCollapsedLines="2"
         app:textCollapse="@string/collapse"
-        app:textExpand="@string/expand"
-        android:visibility="gone"/>
+        app:textExpand="@string/expand"/>
 
 </RelativeLayout>

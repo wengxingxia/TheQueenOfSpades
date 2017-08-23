@@ -13,32 +13,17 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/prize_256"/>
 
-    <TextView
-        android:id="@+id/tvShow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="50dp"
-        android:text="小笑话"/>
 
-    <com.chaychan.viewlib.expandabletextview.ExpandableTextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
+    <com.hanks.htextview.line.LineTextView
+        android:id="@+id/tvLine6"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ellipsize="end"
-        android:textColor="#666"
-        app:animDuration="200"
-        android:layout_alignParentBottom="true"
-        app:collapseDrawable="@mipmap/icon_orange_arrow_down"
-        app:collapseExpandGrarity="right"
-        app:collapseExpandTextColor="@color/main_color"
-        app:contentTextSize="15sp"
-        app:expandDrawable="@mipmap/icon_orange_arrow_up"
-        app:maxCollapsedLines="4"
-        app:textCollapse="@string/collapse"
-        app:textExpand="@string/expand"
-        android:visibility="gone"/>
-
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:padding="5dp"
+        android:text="还记得清风洞，你那逗比的笑容\n很可爱，很招人喜欢，陶醉"
+        android:textColor="@color/color_blue_text"
+        android:textSize="16sp"
+        app:lineColor="@color/color_blue_text"/>
 </RelativeLayout>

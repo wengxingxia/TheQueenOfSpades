@@ -13,32 +13,39 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/prize_8192"/>
 
-    <TextView
-        android:id="@+id/tvShow"
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="50dp"
-        android:text="小笑话"/>
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:ems="1"
+        android:text="那时候去海南，就是为了去看看你"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
 
-    <com.chaychan.viewlib.expandabletextview.ExpandableTextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade2"
+        android:layout_width="16dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ellipsize="end"
-        android:textColor="#666"
-        app:animDuration="200"
-        android:layout_alignParentBottom="true"
-        app:collapseDrawable="@mipmap/icon_orange_arrow_down"
-        app:collapseExpandGrarity="right"
-        app:collapseExpandTextColor="@color/main_color"
-        app:contentTextSize="15sp"
-        app:expandDrawable="@mipmap/icon_orange_arrow_up"
-        app:maxCollapsedLines="4"
-        app:textCollapse="@string/collapse"
-        app:textExpand="@string/expand"
-        android:visibility="gone"/>
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="130dp"
+        android:text="很想你，也很想和你再次去海边玩"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
+
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:ems="1"
+        android:text="在海滩追逐，喝椰汁，听海，沐浴海风"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
 
 </RelativeLayout>

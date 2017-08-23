@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,32 +12,52 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/prize_16384"/>
 
-    <TextView
-        android:id="@+id/tvShow"
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="50dp"
-        android:text="小笑话"/>
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:ems="1"
+        android:text="这张照片，真的太美了，我感觉你已经和这片海景融为了一体"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
 
-    <com.chaychan.viewlib.expandabletextview.ExpandableTextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade2"
+        android:layout_width="16dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ellipsize="end"
-        android:textColor="#666"
-        app:animDuration="200"
-        android:layout_alignParentBottom="true"
-        app:collapseDrawable="@mipmap/icon_orange_arrow_down"
-        app:collapseExpandGrarity="right"
-        app:collapseExpandTextColor="@color/main_color"
-        app:contentTextSize="15sp"
-        app:expandDrawable="@mipmap/icon_orange_arrow_up"
-        app:maxCollapsedLines="4"
-        app:textCollapse="@string/collapse"
-        app:textExpand="@string/expand"
-        android:visibility="gone"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="70dp"
+        android:text="希望以后日子里"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
+
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="100dp"
+        android:ems="1"
+        android:text="你能像那时站在岩石上展望大海的你一样"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
+
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="170dp"
+        android:ems="1"
+        android:text="开朗，快乐，健康
+"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
 
 </RelativeLayout>

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.wxx.thequeenofspades.R;
 import com.example.wxx.thequeenofspades.UIUtils;
 import com.example.wxx.thequeenofspades.dialog.AlertDialog;
@@ -115,11 +116,11 @@ public class QuestionActivity extends AppCompatActivity {
         }
 
         if (isRight) {
-            Glide.with(this).load(R.mipmap.love).asGif().centerCrop()
+            Glide.with(this).load(R.mipmap.love).asGif().diskCacheStrategy(DiskCacheStrategy.NONE).centerCrop()
 //                    .transformFrame(new CropCircleTransformation(this))
                     .transformFrame(new RoundedCornersTransformation(this, UIUtils.dp2px(10), 0))
                     .into(mIvIcon);
-            mTvTips.setText("当然啦，我也爱你");
+            mTvTips.setText("当然啦，我也爱你！\n乖，生日快乐!");
             mAnswerDialog.setText(R.id.tvOk,"游戏赢奖励");
         }else{
             Glide.with(this).load(R.mipmap.beat).asGif().centerCrop()

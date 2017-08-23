@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,32 +12,75 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/prize_128"/>
 
-    <TextView
-        android:id="@+id/tvShow"
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="50dp"
-        android:text="小笑话"/>
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="250dp"
+        android:ems="1"
+        android:text="真的很喜欢看见你笑"
+        android:textColor="@color/color_red_text"
+        android:textSize="16sp"/>
 
-    <com.chaychan.viewlib.expandabletextview.ExpandableTextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ellipsize="end"
-        android:textColor="#666"
-        app:animDuration="200"
-        android:layout_alignParentBottom="true"
-        app:collapseDrawable="@mipmap/icon_orange_arrow_down"
-        app:collapseExpandGrarity="right"
-        app:collapseExpandTextColor="@color/main_color"
-        app:contentTextSize="15sp"
-        app:expandDrawable="@mipmap/icon_orange_arrow_up"
-        app:maxCollapsedLines="4"
-        app:textCollapse="@string/collapse"
-        app:textExpand="@string/expand"
-        android:visibility="gone"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="330dp"
+        android:ems="1"
+        android:text="我觉得我中毒了"
+        android:textColor="@color/color_red_text"
+        android:textSize="16sp"/>
 
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvFade3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="435dp"
+        android:ems="1"
+        android:text="哈哈哈"
+        android:textColor="@color/color_red_text"
+        android:textSize="16sp"/>
+
+
+    <com.hanks.htextview.evaporate.EvaporateTextView
+        android:id="@+id/tvFade4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"
+        android:text="你的欢笑"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
+
+
+    <com.hanks.htextview.evaporate.EvaporateTextView
+        android:id="@+id/tvFade5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="70dp"
+        android:text="是我这辈子见过的"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
+
+
+    <com.hanks.htextview.evaporate.EvaporateTextView
+        android:id="@+id/tvFade6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="100dp"
+        android:text="最美的景色"
+        android:textColor="@color/color_white"
+        android:textSize="16sp"/>
 </RelativeLayout>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,32 +12,27 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/prize_1024"/>
 
-    <TextView
-        android:id="@+id/tvShow"
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvEvaporate1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="50dp"
-        android:text="小笑话"/>
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:ems="1"
+        android:text="拥有你之后，我觉得你就是我的全世界"
+        android:textColor="@color/color_black_text"
+        android:textSize="16sp"/>
 
-    <com.chaychan.viewlib.expandabletextview.ExpandableTextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
+    <com.hanks.htextview.fade.FadeTextView
+        android:id="@+id/tvEvaporate2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ellipsize="end"
-        android:textColor="#666"
-        app:animDuration="200"
-        android:layout_alignParentBottom="true"
-        app:collapseDrawable="@mipmap/icon_orange_arrow_down"
-        app:collapseExpandGrarity="right"
-        app:collapseExpandTextColor="@color/main_color"
-        app:contentTextSize="15sp"
-        app:expandDrawable="@mipmap/icon_orange_arrow_up"
-        app:maxCollapsedLines="4"
-        app:textCollapse="@string/collapse"
-        app:textExpand="@string/expand"
-        android:visibility="gone"/>
-
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="100dp"
+        android:ems="1"
+        android:text="你若不离我就不弃"
+        android:textColor="@color/color_black_text"
+        android:textSize="16sp"/>
 </RelativeLayout>
